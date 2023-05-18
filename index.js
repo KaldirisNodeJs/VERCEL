@@ -28,10 +28,8 @@ app.get('/', (req, res) => {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <!--======== CSS ======== -->
     <link rel="stylesheet" href="root.css">
-    
     <title>Greek In Vercel</title> 
   </head>
   <body>
@@ -39,32 +37,28 @@ app.get('/', (req, res) => {
       <div>
         <h1>Bem Vindo</h1>
         <h4>API No Vercel Operando - Versão 1.0</h4>
-        <br>
         <h5><a href="${xurl}" target="_blank">RANK DOS FILMES</a></h5>
         <br>
       </div>
       
       ${COD_HTML.iconesMidiasSociais()}
 
-        <div class="skill-box"><span class="title">HTML</span>
-          <div class="skill-bar"><span class="skill-per html"><span class="tooltip">90%</span></span></div>
-        </div>
-
-        <div class="skill-box"><span class="title">CSS</span>
-          <div class="skill-bar"><span class="skill-per css"><span class="tooltip">70%</span></span></div>
-        </div>
-
-        <div class="skill-box"><span class="title">JavaScript</span>
-            <div class="skill-bar"><span class="skill-per javascript"><span class="tooltip">50%</span></span></div>
-        </div>
-
-        <div class="skill-box"><span class="title">NodeJS</span>
-          <div class="skill-bar"><span class="skill-per nodejs"><span class="tooltip">90%</span></span>
-        </div>
+      <div class="skill-box"><span class="title">HTML</span>
+        <div class="skill-bar"><span class="skill-per html"><span class="tooltip">90%</span></span></div>
       </div>
+      <div class="skill-box"><span class="title">CSS</span>
+        <div class="skill-bar"><span class="skill-per css"><span class="tooltip">70%</span></span></div>
+      </div>
+      <div class="skill-box"><span class="title">JavaScript</span>
+          <div class="skill-bar"><span class="skill-per javascript"><span class="tooltip">50%</span></span></div>
+      </div>
+      <div class="skill-box"><span class="title">NodeJS</span>
+        <div class="skill-bar"><span class="skill-per nodejs"><span class="tooltip">90%</span></span>
+      </div>
+      
     </div>
-  </body></html>
-  `
+  </body>
+</html>`
 
 
 
