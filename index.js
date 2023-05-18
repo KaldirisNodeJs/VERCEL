@@ -9,6 +9,7 @@ const PORT = 4000
 
 //app.use(express.static(__dirname + '/public'));
 app.use(express.static(__dirname));
+app.use(express.static(__dirname + '/assets/icones'));
 
 app.listen(PORT, () => {
   console.log(`API listening on PORT ${PORT} `)
@@ -58,6 +59,7 @@ app.get('/', (req, res) => {
         </div>
       </div>
     </div>
+    ${COD_HTML.iconesMidiasSociais()}
   </body></html>
   `
 
@@ -77,7 +79,6 @@ app.get('/', (req, res) => {
 
   res.send(htmlroot);
 })
-
 
 // FILMES
 app.get("/filmes",asyncHandler(async (req, res) => {
