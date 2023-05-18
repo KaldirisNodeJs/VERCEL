@@ -148,15 +148,17 @@ function pageMenu(xTitulo) {
                 <a class="nav-link active" aria-current="page" href="/">Início</a>
                 </li>
 
+                <!-- CHATGPT
                 <li class="nav-item dropdown d-flex" style="vertical-align: middle;">
-                <a href="/chat"><img src="./assets/icones/iconeRoboInv.png" alt="LogoChatGPT" width="30" height="24"></a>
-                <a class="nav-link dropdown-toggle" href="/chat" data-bs-toggle="dropdown" aria-expanded="false">ChatGPT</a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="/chat">Perguntar</a></li>
-                    <li><a class="dropdown-item" href="/hist">Históricos</a></li>
-                    <li><a class="dropdown-item" href="/ajudagpt">Help</a></li>
-                </ul>
+                    <a href="/chat"><img src="./assets/icones/iconeRoboInv.png" alt="LogoChatGPT" width="30" height="24"></a>
+                    <a class="nav-link dropdown-toggle" href="/chat" data-bs-toggle="dropdown" aria-expanded="false">ChatGPT</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/chat">Perguntar</a></li>
+                        <li><a class="dropdown-item" href="/hist">Históricos</a></li>
+                        <li><a class="dropdown-item" href="/ajudagpt">Help</a></li>
+                    </ul>
                 </li>
+                -->
 
 
                 <li class="nav-item dropdown d-flex" style="vertical-align: middle;">
@@ -248,7 +250,9 @@ function pageRodape() {
         </div>
         
         <ul class="nav col-md-3 d-flex justify-content-end align-items-center">
-        <li class="ms-2"><a href="https://twitter.com/Kaldiris"              target="_blank" class="icone-social"><img src="./assets/icones/twitter.jpg"   class="bi" width="24" height="22"></a></li>
+        <li class="ms-2"><a href="https://kaldiris.com.br"                   target="_blank" class="icone-social"><img src="./assets/icones/home.png" class="bi" width="24" height="24"></a></li>    
+        <li class="ms-2"><a href="https://wa.me/5511991049200?text=Demetrios+Kaldiris+%28Grego%29" target="_blank" class="icone-social"><img src="./assets/icones/whatsappQuadrado.png" class="bi" width="24" height="24"></a></li>    
+        <li class="ms-2"><a href="https://twitter.com/Kaldiris"              target="_blank" class="icone-social"><img src="./assets/icones/twitter.jpg"   class="bi" width="24" height="24"></a></li>
         <li class="ms-2"><a href="https://www.instagram.com/kaldiris_grego/" target="_blank" class="icone-social"><img src="./assets/icones/instagram.jpg" class="bi" width="24" height="24"></a></li>
         <li class="ms-2"><a href="https://www.facebook.com/kaldiris"         target="_blank" class="icone-social"><img src="./assets/icones/facebook.jpg"  class="bi" width="24" height="24"></a></li>
         <li class="ms-2"><a href="http://kaldiris.blogspot.com/"             target="_blank" class="icone-social"><img src="./assets/icones/google.png"    class="bi" width="24" height="24"></a></li>
@@ -266,24 +270,6 @@ function pageRodape() {
 }
 
 function iconesMidiasSociais(){
-    let xret = `
-    <div class="col-md-4 d-flex align-items-top">
-        <ul class="nav col-md-3 d-flex justify-content-end align-items-center">
-            <li class="ms-2"><a href="https://kaldiris.com.br"                   target="_blank" class="icone-social"><img src="./assets/icones/home.png" class="bi" width="24" height="24"></a></li>    
-            <li class="ms-2"><a href="https://wa.me/5511991049200?text=Demetrios+Kaldiris+%28Grego%29" target="_blank" class="icone-social"><img src="./assets/icones/whatsappQuadrado.png" class="bi" width="24" height="24"></a></li>    
-            <li class="ms-2"><a href="https://twitter.com/Kaldiris"              target="_blank" class="icone-social"><img src="./assets/icones/twitter.jpg"       class="bi" width="24" height="24"></a></li>
-            <li class="ms-2"><a href="https://www.instagram.com/kaldiris_grego/" target="_blank" class="icone-social"><img src="./assets/icones/instagram.jpg"     class="bi" width="24" height="24"></a></li>
-            <li class="ms-2"><a href="https://www.facebook.com/kaldiris"         target="_blank" class="icone-social"><img src="./assets/icones/facebook.jpg"      class="bi" width="24" height="24"></a></li>
-            <li class="ms-2"><a href="http://kaldiris.blogspot.com/"             target="_blank" class="icone-social"><img src="./assets/icones/google.png"        class="bi" width="24" height="24"></a></li>
-            
-            <li class="ms-2"><a href="https://www.linkedin.com/in/demetrios-kaldiris-grego-84063523/"              target="_blank" class="icone-social">
-            <img src="./assets/icones/linkedin.png" class="bi" width="24" height="24"></a></li>
-
-            <li class="ms-2"><a href="https://www.youtube.com/channel/UCbUKkdkJ8jyGfv7aEaRyKsA?view_as=subscriber" target="_blank" class="icone-social">
-            <img src="./assets/icones/youtube.png"  class="bi" width="24" height="24"></a></li>
-        </ul>
-    </div>`
-
     let xret2 = `
         <div style='padding 20px'>
             <a href="https://kaldiris.com.br"                   target="_blank" class="icone-social"><img src="./assets/icones/home.png"        class="bi" width="24" height="24"></a>

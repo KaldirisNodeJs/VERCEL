@@ -13,19 +13,13 @@ app.listen(PORT, () => {
 })
 
 
-// TESTE - PADRAO
-app.get('/padrao', (req, res) => {
+
+
+app.get('/teste', (req, res) => {
 
   var html = COD_HTML.pageInicio('RANK Filmes',70)
   // (NAV)  MENU NO TOPO
   html = html + `<div id="conteudo-menu">` + COD_HTML.pageMenu('KALDIRIS TOOLS') + '</div>'
-
-  html = html + `
-  <main class="px-2" style="vertical-align: center; padding: 10px;">
-  <div class="content" style="vertical-align: center !important;  text-align: center !important">
-  <br><h1>ROTA PADRÂO DE EXEMPLO</h1>
-  <h4>API Hospedada no Vercel<h4><br>
-  `
   // Fechamento do Content
   html = html + '</div></main>'
   // RODAPÉ
@@ -36,34 +30,57 @@ app.get('/padrao', (req, res) => {
 
 });
 
-// ROOT - BEM VINDO
 app.get('/', (req, res) => {
   
   const xurloriginal = req.protocol + '://' + req.get('host') + req.originalUrl;
-  //let xurl = xurloriginal + 'filmes';
-  let xurl = '/filmes'
-
-  var html = COD_HTML.pageInicio('RANK Filmes',70)
-  // (NAV)  MENU NO TOPO
-  html = html + `<div id="conteudo-menu">` + COD_HTML.pageMenu('KALDIRIS TOOLS') + '</div>'
-
-  html = html + `
-      <main class="px-2" style="vertical-align: center; padding: 10px;">
-      <div class="content" style="vertical-align: center !important;  text-align: center !important">
-      <br><h1>BEM VINDO</h1>
-      <h4>API Hospedada no Vercel<h4><br>
-      <br>
-      <h5><a href="${xurl}">RANK DOS FILMES</a></h5>
-      <br>
-      `
-  // Fechamento do Content
-  html = html + '</div></main>'
   
-  // RODAPÉ
-  html = html + '<div id="conteudo-rodape">'+COD_HTML.pageRodape()+'</div>'
-  // FIM DA PAGINA
-  html = html + COD_HTML.pageFim();
-  res.send(html);
+  let xurl = xurloriginal + 'filmes';
+
+  var htmlroot = `
+  <!doctype html>
+  <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--======== CSS ======== -->
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    
+    <link href="./index.css" rel="stylesheet" crossorigin="anonymous">
+
+    <title>Greek In Vercel</title> 
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <h1>Bem Vindo</h1>
+        <h4>API No Vercel Operando - Versão 1.0</h4>
+        <h5><a href="${xurl}" target="_blank">RANK DOS FILMES</a></h5>
+        <br>
+      </div>
+      
+      ${COD_HTML.iconesMidiasSociais()}
+
+      <div class="skill-box"><span class="title">HTML</span>
+        <div class="skill-bar"><span class="skill-per html"><span class="tooltip">90%</span></span></div>
+      </div>
+      <div class="skill-box"><span class="title">CSS</span>
+        <div class="skill-bar"><span class="skill-per css"><span class="tooltip">70%</span></span></div>
+      </div>
+      <div class="skill-box"><span class="title">JavaScript</span>
+          <div class="skill-bar"><span class="skill-per javascript"><span class="tooltip">50%</span></span></div>
+      </div>
+      <div class="skill-box"><span class="title">NodeJS</span>
+        <div class="skill-bar"><span class="skill-per nodejs"><span class="tooltip">90%</span></span>
+      </div>
+      
+    </div>
+  </body>
+</html>`
+
+res.send(htmlroot);
 
 })
 
@@ -84,7 +101,7 @@ app.get("/filmes",asyncHandler(async (req, res) => {
       <main class="px-2" style="vertical-align: center; padding: 10px;">
         <div class="content" style="vertical-align: center !important;  text-align: center !important">
           <h1>Filmes</h1>
-          <h4>Rank dos Mais Votados</h4><br>`
+          <strong>Rank dos Mais Votados</strong><br>`
           // ITENS - FILMES ===================
           global.filmePopular.forEach(item => {
           html = html + `<div style='padding:10px; vertical-align: center !important; '><br>`
