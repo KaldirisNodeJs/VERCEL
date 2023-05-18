@@ -18,8 +18,6 @@ body {
 }
 
 
-
-/* BOOTSTRAP PADROES */
 .btn-bd-primary {
   --bd-violet-bg: #712cf9;
   --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
@@ -87,12 +85,6 @@ body {
   height: 100vh;
 }
 
-
-
-
-
-
-/* KALDIRIS FRAMEWORK PADROES */
 .cover-container {
   max-width: 42em;
 }
@@ -129,15 +121,8 @@ footer {
   display: inline-table;
   text-align: left;
 }
-/* .ListaDeTopicos li { display:inline; } */
 
 
-
-
-
-
-
-/* PADRAO ABAIXO PARA QUANDO MAIOR QUE 768 */
 @media (min-width: 768px) {
   .bd-placeholder-img-lg {
     font-size: 3.5rem;
@@ -168,6 +153,5 @@ footer {
     text-align: left;
   }
 
-  /* .ListaDeTopicos li { display:inline; } */
   
 }
