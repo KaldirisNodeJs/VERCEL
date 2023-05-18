@@ -265,7 +265,6 @@ function pageRodape() {
     return(xret)
 }
 
-
 function iconesMidiasSociais(){
     let xret = `
     <div class="col-md-4 d-flex align-items-top">
