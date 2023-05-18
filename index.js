@@ -23,32 +23,34 @@ app.listen(PORT, () => {
 })
 
 app.get('/', (req, res) => {
-  res.send('API NO VERCEL FUNCIONANDO - 🥳')
+  res.send('API NO VERCEL FUNCIONANDO - By Grego')
 })
 
 app.get('/about', (req, res) => {
-  res.send('Uma Rota Diferente - Porta 4000 no localhost ')
+  res.send('Uma Rota Diferente (about)')
 })
 
 // FILMES
 app.get("/filmes",asyncHandler(async (req, res) => {
-  let xjson;
-  let xret = await API_Filmes.getFilmePopular().then((res) => {
-    //console.log("FILMES",global.filmePopular);
-  });
+ 
+  await API_Filmes.getFilmePopular();   //.then((ret) => {});
+  res.send(global.filmePopular);
 
-  let file = "./filmes_rank.html";
-  let xTemplate = fs.readFile(file, (err, buffer) => {
-    if (err) {
-      console.error("ERRO >>>>:", err);
-      return;
-    }
-    let html = buffer.toString();
-    let xhtml = ejs.render(html, { dados: global.filmePopular });
-    res.send(xhtml);
-  });
-})
-);
+
+  // let file = "./filmes_rank.html";
+  // let xTemplate = fs.readFile(file, (err, buffer) => {
+  //   if (err) {
+  //     console.error("ERRO >>>>:", err);
+  //     return;
+  //   }
+  //   let html = buffer.toString();
+  //   let xhtml = ejs.render(html, { dados: global.filmePopular });
+  //   res.send(xhtml);
+  // });
+
+
+
+}));
 
 
 // Export the Express API
