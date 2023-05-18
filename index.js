@@ -15,6 +15,21 @@ app.listen(PORT, () => {
   console.log(`API listening on PORT ${PORT} `)
 })
 
+app.get('/teste', (req, res) => {
+
+  var html = COD_HTML.pageInicio('RANK Filmes',70)
+  // (NAV)  MENU NO TOPO
+  html = html + `<div id="conteudo-menu">` + COD_HTML.pageMenu('KALDIRIS TOOLS') + '</div>'
+  // Fechamento do Content
+  html = html + '</div></main>'
+  // RODAPÉ
+  html = html + '<div id="conteudo-rodape">'+COD_HTML.pageRodape()+'</div>'
+  // FIM DA PAGINA
+  html = html + COD_HTML.pageFim();
+  res.send(html);
+
+});
+
 app.get('/', (req, res) => {
   
   const xurloriginal = req.protocol + '://' + req.get('host') + req.originalUrl;
@@ -29,7 +44,7 @@ app.get('/', (req, res) => {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--======== CSS ======== -->
-    <link rel="stylesheet" href="./root.css">
+    <link href="./root.css" rel="stylesheet" crossorigin="anonymous">
     <title>Greek In Vercel</title> 
   </head>
   <body>
@@ -60,21 +75,8 @@ app.get('/', (req, res) => {
   </body>
 </html>`
 
+res.send(htmlroot);
 
-
-
-  // var html = COD_HTML.pageInicio('RANK Filmes',70)
-  // // (NAV)  MENU NO TOPO
-  // html = html + `<div id="conteudo-menu">` + COD_HTML.pageMenu('KALDIRIS TOOLS') + '</div>'
-  // // Fechamento do Content
-  // html = html + '</div></main>'
-  // // RODAPÉ
-  // html = html + '<div id="conteudo-rodape">'+COD_HTML.pageRodape()+'</div>'
-  // // FIM DA PAGINA
-  // html = html + COD_HTML.pageFim();
-
-
-  res.send(htmlroot);
 })
 
 // FILMES
