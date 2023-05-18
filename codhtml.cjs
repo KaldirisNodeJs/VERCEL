@@ -265,28 +265,44 @@ function pageRodape() {
     return(xret)
 }
 
-// <div class="col-md-4 d-flex align-items-top" style="color:withe"></div> 
-// <a href="https://kaldiris.com.br" target="_blank" class="text-white">Kaldiris</a>
-// https://wa.me/5511991049200?text=Demetrios+Kaldiris+%28Grego%29
 
 function iconesMidiasSociais(){
     let xret = `
-    <ul class="nav col-md-3 d-flex justify-content-end align-items-center">
-        <li class="ms-2"><a href="https://kaldiris.com.br"                   target="_blank" class="icone-social"><img src="./assets/icones/home.png" class="bi" width="24" height="22"></a></li>    
-        <li class="ms-2"><a href="https://wa.me/5511991049200?text=Demetrios+Kaldiris+%28Grego%29" target="_blank" class="icone-social"><img src="./assets/icones/whatsappQuadrado.png" class="bi" width="24" height="22"></a></li>    
-        <li class="ms-2"><a href="https://twitter.com/Kaldiris"              target="_blank" class="icone-social"><img src="./assets/icones/twitter.jpg"       class="bi" width="24" height="22"></a></li>
-        <li class="ms-2"><a href="https://www.instagram.com/kaldiris_grego/" target="_blank" class="icone-social"><img src="./assets/icones/instagram.jpg"     class="bi" width="24" height="24"></a></li>
-        <li class="ms-2"><a href="https://www.facebook.com/kaldiris"         target="_blank" class="icone-social"><img src="./assets/icones/facebook.jpg"      class="bi" width="24" height="24"></a></li>
-        <li class="ms-2"><a href="http://kaldiris.blogspot.com/"             target="_blank" class="icone-social"><img src="./assets/icones/google.png"        class="bi" width="24" height="24"></a></li>
-        
-        <li class="ms-2"><a href="https://www.linkedin.com/in/demetrios-kaldiris-grego-84063523/"              target="_blank" class="icone-social">
-        <img src="./assets/icones/linkedin.png" class="bi" width="24" height="24"></a></li>
+    <div class="col-md-4 d-flex align-items-top">
+        <ul class="nav col-md-3 d-flex justify-content-end align-items-center">
+            <li class="ms-2"><a href="https://kaldiris.com.br"                   target="_blank" class="icone-social"><img src="./assets/icones/home.png" class="bi" width="24" height="24"></a></li>    
+            <li class="ms-2"><a href="https://wa.me/5511991049200?text=Demetrios+Kaldiris+%28Grego%29" target="_blank" class="icone-social"><img src="./assets/icones/whatsappQuadrado.png" class="bi" width="24" height="24"></a></li>    
+            <li class="ms-2"><a href="https://twitter.com/Kaldiris"              target="_blank" class="icone-social"><img src="./assets/icones/twitter.jpg"       class="bi" width="24" height="24"></a></li>
+            <li class="ms-2"><a href="https://www.instagram.com/kaldiris_grego/" target="_blank" class="icone-social"><img src="./assets/icones/instagram.jpg"     class="bi" width="24" height="24"></a></li>
+            <li class="ms-2"><a href="https://www.facebook.com/kaldiris"         target="_blank" class="icone-social"><img src="./assets/icones/facebook.jpg"      class="bi" width="24" height="24"></a></li>
+            <li class="ms-2"><a href="http://kaldiris.blogspot.com/"             target="_blank" class="icone-social"><img src="./assets/icones/google.png"        class="bi" width="24" height="24"></a></li>
+            
+            <li class="ms-2"><a href="https://www.linkedin.com/in/demetrios-kaldiris-grego-84063523/"              target="_blank" class="icone-social">
+            <img src="./assets/icones/linkedin.png" class="bi" width="24" height="24"></a></li>
 
-        <li class="ms-2"><a href="https://www.youtube.com/channel/UCbUKkdkJ8jyGfv7aEaRyKsA?view_as=subscriber" target="_blank" class="icone-social">
-        <img src="./assets/icones/youtube.png"  class="bi" width="24" height="24"></a></li>
-    </ul>`
-   
-    return(xret);
+            <li class="ms-2"><a href="https://www.youtube.com/channel/UCbUKkdkJ8jyGfv7aEaRyKsA?view_as=subscriber" target="_blank" class="icone-social">
+            <img src="./assets/icones/youtube.png"  class="bi" width="24" height="24"></a></li>
+        </ul>
+    </div>`
+
+    let xret2 = `
+        <div style='padding 20px'>
+            <a href="https://kaldiris.com.br"                   target="_blank" class="icone-social"><img src="./assets/icones/home.png"        class="bi" width="24" height="24"></a>
+            <a href="https://wa.me/5511991049200?text=Demetrios+Kaldiris+%28Grego%29" target="_blank" class="icone-social"><img src="./assets/icones/whatsappQuadrado.png" class="bi" width="24" height="24"></a>
+            <a href="https://twitter.com/Kaldiris"              target="_blank" class="icone-social"><img src="./assets/icones/twitter.jpg"     class="bi" width="24" height="24"></a>
+            <a href="https://www.instagram.com/kaldiris_grego/" target="_blank" class="icone-social"><img src="./assets/icones/instagram.jpg"   class="bi" width="24" height="24"></a>
+            <a href="https://www.facebook.com/kaldiris"         target="_blank" class="icone-social"><img src="./assets/icones/facebook.jpg"    class="bi" width="24" height="24"></a>
+            <a href="http://kaldiris.blogspot.com/"             target="_blank" class="icone-social"><img src="./assets/icones/google.png"      class="bi" width="24" height="24"></a>
+            
+            <a href="https://www.linkedin.com/in/demetrios-kaldiris-grego-84063523/"              target="_blank" class="icone-social">
+            <img src="./assets/icones/linkedin.png" class="bi" width="24" height="24"></a></li>
+
+            <a href="https://www.youtube.com/channel/UCbUKkdkJ8jyGfv7aEaRyKsA?view_as=subscriber" target="_blank" class="icone-social">
+            <img src="./assets/icones/youtube.png"  class="bi" width="24" height="24"></a></li>
+        <div>    
+    `
+
+    return(xret2);
 }
 
 module.exports = { pageInicio, pageFim, pageMenu, pageRodape, iconesMidiasSociais };

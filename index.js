@@ -37,11 +37,15 @@ app.get('/', (req, res) => {
   <body>
     <div class="container">
       <div>
-      <h1>Bem Vindo</h1>
-      <h5>API No Vercel Operando - Versão 1.0</h5>
-      <br>
-      <a href="${xurl}" target="_blank">CLIQUE AQUI - RANK DOS FILMES</a>'
+        <h1>Bem Vindo</h1>
+        <h4>API No Vercel Operando - Versão 1.0</h4>
+        <br>
+        <h5><a href="${xurl}" target="_blank">RANK DOS FILMES</a></h5>
+        <br>
       </div>
+      
+      ${COD_HTML.iconesMidiasSociais()}
+
         <div class="skill-box"><span class="title">HTML</span>
           <div class="skill-bar"><span class="skill-per html"><span class="tooltip">90%</span></span></div>
         </div>
@@ -59,7 +63,6 @@ app.get('/', (req, res) => {
         </div>
       </div>
     </div>
-    ${COD_HTML.iconesMidiasSociais()}
   </body></html>
   `
 
