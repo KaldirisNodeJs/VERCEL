@@ -1,16 +1,8 @@
-// index.js
-// import { createRequire } from "module";
-// import * as API_Filmes from "./filmes.cjs";
-// const require = createRequire(import.meta.url);
-
-
 const API_Filmes   = require("./filmes.cjs")
+const COD_HTML     = require("./codhtml.cjs")
 const express      = require('express')
 const asyncHandler = require("express-async-handler");
-const url          = require('url');
 const fs           = require("fs");
-const ejs          = require("ejs");
-// const FormData = require("form-data");
 
 const app = express()
 const PORT = 4000
@@ -23,111 +15,133 @@ app.listen(PORT, () => {
 })
 
 app.get('/', (req, res) => {
+  
   const xurloriginal = req.protocol + '://' + req.get('host') + req.originalUrl;
+  
   let xurl = xurloriginal + 'filmes';
-  let xret = 'API NO VERCEL FUNCIONANDO - By Grego<br><a href="'+xurl+'" target="_blank">Abrir Rota Filmes</a>'
-  res.send(xret);
-})
 
-app.get('/about', (req, res) => {
-  res.send('Uma Rota Diferente (about)')
+  var htmlroot = `
+  <!doctype html>
+  <html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!--======== CSS ======== -->
+    <link rel="stylesheet" href="root.css">
+    
+    <title>Greek In Vercel</title> 
+  </head>
+  <body>
+    <div class="container">
+      <div>
+      <h1>Bem Vindo</h1>
+      <h5>API No Vercel Operando - Versão 1.0</h5>
+      <br>
+      <a href="${xurl}" target="_blank">CLIQUE AQUI - RANK DOS FILMES</a>'
+      </div>
+        <div class="skill-box"><span class="title">HTML</span>
+          <div class="skill-bar"><span class="skill-per html"><span class="tooltip">90%</span></span></div>
+        </div>
+
+        <div class="skill-box"><span class="title">CSS</span>
+          <div class="skill-bar"><span class="skill-per css"><span class="tooltip">70%</span></span></div>
+        </div>
+
+        <div class="skill-box"><span class="title">JavaScript</span>
+            <div class="skill-bar"><span class="skill-per javascript"><span class="tooltip">50%</span></span></div>
+        </div>
+
+        <div class="skill-box"><span class="title">NodeJS</span>
+          <div class="skill-bar"><span class="skill-per nodejs"><span class="tooltip">90%</span></span>
+        </div>
+      </div>
+    </div>
+  </body></html>
+  `
+
+
+
+
+  // var html = COD_HTML.pageInicio('RANK Filmes',70)
+  // // (NAV)  MENU NO TOPO
+  // html = html + `<div id="conteudo-menu">` + COD_HTML.pageMenu('KALDIRIS TOOLS') + '</div>'
+  // // Fechamento do Content
+  // html = html + '</div></main>'
+  // // RODAPÉ
+  // html = html + '<div id="conteudo-rodape">'+COD_HTML.pageRodape()+'</div>'
+  // // FIM DA PAGINA
+  // html = html + COD_HTML.pageFim();
+
+
+  res.send(htmlroot);
 })
 
 
 // FILMES
 app.get("/filmes",asyncHandler(async (req, res) => {
  
-  await API_Filmes.getFilmePopular();   //.then((ret) => {});
+  await API_Filmes.getFilmePopular();
+
+  // Retorno da API
+  // res.send(global.filmePopular);
   
-  //res.send(global.filmePopular);
-  
-  var html = `
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Rank Filmes</title>
-    </head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <link href="./index.css" rel="stylesheet" crossorigin="anonymous">
-    <style>
-      body {
-        background-color: Black;
-      }
-    </style>
-    <body>
-    <main class="px-2" style="vertical-align: center; padding: 10px;">
-    <div class="content" style="color: white !important; vertical-align: center !important;  text-align: center !important">
-      <h1>Filmes</h1>
-      <strong>Rank dos Mais Votados</strong><br><br><br>
-      `
-      // ITENS DO ARRAY DE FILMES
-      global.filmePopular.forEach(item => {
-      html = html + '<div><br>'
-      html = html + "<img src='" + item.poster_path + "' width='355px' height='auto' alt='" + item.title + "'><br></br>"
-      html = html + `<table style="align-items: center !important; text-align: center !important"><tr><td></td><td></td></tr>`
+  // HTML DE RETORNO #############################################################################################################################
+  var html = COD_HTML.pageInicio('RANK Filmes',70)
+      // (NAV)  MENU NO TOPO
+      html = html + `<div id="conteudo-menu">` + COD_HTML.pageMenu('KALDIRIS TOOLS') + '</div>'
+      // (MAIN) CONTENT DA PAGINA ===========
       html = html + `
-          <tr style="text-align: left;">
-              <td style="color:rgb(255, 175, 55)">ID</td>
-              <td>${ item.id }</td>
-          </tr>
-          <tr style="text-align: left;">
-              <td style="color:rgb(255, 175, 55)">DATA</td>
-              <td>${ item.release_date }</td>
-          </tr>
-          <tr style="text-align: left;">
-              <td style="color:rgb(255, 175, 55)">TITULO</td>
-              <td>${ item.title }</td>
-          </tr>
-          <tr style="text-align: left;">
-              <td style="color:rgb(255, 175, 55)">GENEROS&nbsp;</td>
-              <td>${ item.genre_names }</td>
-          </tr>
-          <tr style="text-align: left;">
-              <td style="color:rgb(255, 175, 55)">PONTOS</td>
-              <td>${ item.popularity } / ${  item.vote_count } / ${  item.vote_average }</td>
-          </tr>
-          <tr style="text-align: left;">
-              <td style="color:rgb(255, 175, 55); vertical-align: top;">RESUMO</td>
-              <td>${ item.overview }</td>
-          </tr>
-    `
-    html = html +'</table></div>'
-
+      <main class="px-2" style="vertical-align: center; padding: 10px;">
+        <div class="content" style="vertical-align: center !important;  text-align: center !important">
+          <h1>Filmes</h1>
+          <strong>Rank dos Mais Votados</strong><br>`
+          // ITENS - FILMES ===================
+          global.filmePopular.forEach(item => {
+          html = html + `<div style='padding:10px; vertical-align: center !important; '><br>`
+          html = html + "<img src='" + item.poster_path + "' width='355px' height='auto' alt='" + item.title + "'><br></br>"
+          html = html + `<table style="align-items: center !important; text-align: center !important">`
+          html = html + `<tr><td></td><td></td></tr>`
+          html = html + `
+            <tr style="text-align: left;">
+                <td style="color:rgb(255, 175, 55)">ID</td>
+                <td>${ item.id }</td>
+            </tr>
+            <tr style="text-align: left;">
+                <td style="color:rgb(255, 175, 55)">DATA</td>
+                <td>${ item.release_date }</td>
+            </tr>
+            <tr style="text-align: left;">
+                <td style="color:rgb(255, 175, 55)">TITULO</td>
+                <td><strong>${ item.title }</strong></td>
+            </tr>
+            <tr style="text-align: left;">
+                <td style="color:rgb(255, 175, 55)">GENEROS&nbsp;</td>
+                <td>${ item.genre_names }</td>
+            </tr>
+            <tr style="text-align: left;">
+                <td style="color:rgb(255, 175, 55)">PONTOS</td>
+                <td>${ item.popularity } / ${  item.vote_count } / ${  item.vote_average }</td>
+            </tr>
+            <tr style="text-align: left;">
+                <td style="color:rgb(255, 175, 55); vertical-align: top;">RESUMO</td>
+                <td>${ item.overview }</td>
+            </tr>
+          </table>
+        </div>`
   });
-
-  html = html + '</div></main></body></html>'
+  // Fechamento do Content
+  html = html + '</div></main>'
+  // RODAPÉ
+  html = html + '<div id="conteudo-rodape">'+COD_HTML.pageRodape()+'</div>'
+  // FIM DA PAGINA
+  html = html + COD_HTML.pageFim();
+  // #############################################################################################################################
+  
+  
   res.send(html);
 
-
-                            
-
-  
-
-
-
-
-
-
-
-
-
-
-
-  //let file = "./filmes_rank.html";
-  //var xhtml;
-  // fs.readFile(file, (err, buffer) => {
-  //   if (err) {
-  //     console.error("ERRO >>>>:", err);
-  //     return;
-  //   }
-  //   var html = buffer.toString();
-  //   xhtml    = ejs.render(html, { dados: global.filmePopular });
-  //   res.send(xhtml);
-  // });
 
 
 }));
