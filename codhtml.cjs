@@ -9,11 +9,21 @@ function pageInicio(xnome, xpadtop) {
       <title>${xnome}</title>
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-      <link href="./index.css" rel="stylesheet" crossorigin="anonymous">
     </head>
 
     <style>
-      
+    
+    :root {
+        --CorBlue1: #000296;
+        --CorBlue2: #1e90ff;
+        --CorBlue3: #acd5ff;
+        --CorBranca: #ffffff;
+        --CorPreta: #000000;
+        --kf_Cor_Back_NavFooter: var(--CorBlue1);
+        --kf_Cor_Font_NavFooter: var(--CorBranca);
+    }
+
+        
     body {
         padding-top: ${xpadtop}px;
         font-size: 13px;
@@ -71,13 +81,107 @@ function pageInicio(xnome, xpadtop) {
         -webkit-overflow-scrolling: touch;
     }
 
+
+
+
+
+    .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, 0.1);
+        border: solid rgba(0, 0, 0, 0.15);
+        border-width: 1px 0;
+        box-shadow: inset 0 0.5em 1.5em rgba(0, 0, 0, 0.1),
+          inset 0 0.125em 0.5em rgba(0, 0, 0, 0.15);
+      }
+      
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+      
+      .cover-container {
+        max-width: 42em;
+      }
+      
+      .global-CorTexto {
+        color: var(--CorBlue2);
+      }
+      .global-CorNavBar {
+        background-color: var(--kf_Cor_Back_NavFooter);
+        color: var(--kf_Cor_Font_NavFooter);
+        font-weight: bold;
+        padding: 8px;
+        margin: 0px;
+      }
+      .icone-social {
+        color: whitesmoke;
+        padding-bottom: 10px;
+      }
+      
+      .ListaDeTopicos {
+        text-align: center;
+        font-size: 13px;
+      }
+      .ListaDeTopicos ul {
+        display: inline-table;
+        text-align: left;
+      }
+      
+      
+
     footer {
         /* position: absolute; */
+        font-size: 12px;
         position: fixed;
         bottom: 0;
         width: 100%;
         height: 51px;
     }
+
+
+
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      
+        .esconder {
+          opacity: 0;
+          display: none;
+        }
+      
+        .icone-social {
+          color: crimson important;
+        }
+      
+        body {
+          /* color: crimson; */
+          font-size: 14px;
+          text-align: center;
+        }
+      
+        .ListaDeTopicos {
+          text-align: center;
+          font-size: 15px;
+        }
+      
+        .ListaDeTopicos ul {
+          display: inline-table;
+          text-align: left;
+        }
+
+        footer {
+            /* position: absolute; */
+            
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 51px;
+        }
+
     </style>
 
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">

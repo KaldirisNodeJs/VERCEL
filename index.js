@@ -6,8 +6,10 @@ const fs           = require("fs");
 
 const app = express()
 const PORT = 4000
+
 app.use(express.static(__dirname + '/assets/icones'));
 app.use(express.static(__dirname));
+
 app.listen(PORT, () => {
   console.log(`API listening on PORT ${PORT} `)
 })
